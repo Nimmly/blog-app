@@ -13,6 +13,9 @@ export default class PostsService{
         add(post){
             return Axios.post('posts', post)
         }
+        delete(id){
+            return Axios.delete(`posts/${id}`)
+        }
     
 }
 

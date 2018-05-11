@@ -2,6 +2,8 @@
   <div class="container">
     <div v-for="(post, key) in posts" :key="key"> 
         <router-link class="nav-link " :to="{ name: 'single-post', params: { id: post.id }}">{{ post.title }}</router-link>
+        <router-link :to="{ name: 'edit-post', params: { id: post.id } }" class="btn btn-primary">Edit</router-link>
+        <button @click="deletePost(post.id)">Delete</button>
     </div>
 
 </div>
@@ -25,6 +27,14 @@ export default {
         
   })
     },
+    methods:{
+    deletePost(id) {
+      postService.delete(id)
+        .then(() => {
+            postService.getAll().then(response => (this.posts = response.data));
+          });
+    }
+    }
 
 }
 </script>

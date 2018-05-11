@@ -41,6 +41,11 @@ export default {
             }
         }
     },
+    created(){
+        if(this.$route.params.id){
+        postService.get(this.$route.params.id).then((response) => {
+        this.newPost = response.data})}
+    },
     methods:{
         addPost(newPost){
             postService.add(this.newPost)
