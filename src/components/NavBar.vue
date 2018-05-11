@@ -7,7 +7,7 @@
         <router-link class="nav-link " to="/posts">Posts</router-link>
       </li>
       <li class="nav-item">
-      <router-link class="nav-link " to="#">Add Post</router-link>
+      <router-link class="nav-link " to="/add">Add Post</router-link>
       </li> 
     </ul>
   </div>

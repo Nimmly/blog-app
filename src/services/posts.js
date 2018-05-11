@@ -7,6 +7,12 @@ export default class PostsService{
         getAll(){
             return Axios.get('posts') 
     }
+        get(id){
+            return Axios.get(`posts/${id}`)
+        }
+        add(post){
+            return Axios.post('posts', post)
+        }
     
 }
 
