@@ -16,6 +16,9 @@ export default class PostsService{
         delete(id){
             return Axios.delete(`posts/${id}`)
         }
+        addComment(comment, postId){
+            return Axios.post(`posts/${postId}/comments`, comment)
+        }
     
 }
 
